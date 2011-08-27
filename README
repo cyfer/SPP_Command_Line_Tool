@@ -1,0 +1,13 @@
+This is a repository hosting the Semantic Provenance Processor Command-Line too. To use the SPP, you should make sure, you have the following:
+
+1) A Taverna 2.3 command-line tool
+2) An instance of 4Store running and a KB set up on it. To do this follow the Steps below:
+
+¥	Install 4Store. It can be found at http://4store.org/trac/wiki/Download ¥	Invoke the 4Store command line application¥	Set up your KB by typing: 4s-backend-setup <your KB Name>  and return¥	Start up your KB by typing: 4s-backend <your KB Name> and return¥	Start a SPARQL HTTP server at port 8001, by typing: 4s-httpd -p 8001 <your KB Name> and return¥	The HTTP SPARQL endpoint should now be available at http://localhost:8001/test/ ¥	If at any point the KB becomes unresponsive, just quit the 4s-backend and 4s-httpd processes and restart the KB and the SPARQL HTTP server by re-typing: 4s-backend <your KB Name> and return4s-httpd -p 8001 <your KB Name> and returnMore information on using 4Store is available at : http://4store.org/trac/wiki/Documentation  
+3) A Taverna workflow to execute
+
+To Run the SPP through its command-line application, follow these steps:
+
+1.	Open a terminal window and navigate inside the bin folder of the SPP. E.g.cd /Users/emmanouil/Documents/Master_Thesis/SPP/bin2.	Type: chmod 755 proshell and return3.	Type: ./proshell followed by the necessary flags and arguments. E.g../proshell --this=/Users/emmanouil/Documents/Master_Thesis/workflows/BioAid_Prot.t2flow --tavernadirectory /Users/emmanouil/Documents/Master_Thesis/tools/taverna-commandline-2.3.0/ query_string randomString
+
+and press Return to run the SPP
